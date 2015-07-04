@@ -18,26 +18,62 @@ int main(int argc, char **argv) {
 		"Carolina", "Catalina", "Leonardo", "Walter", "Helen", "Silvia",
 		"Monse", "Camila", "Carlos", "Aracely", "Mario" };
 
-	Lista<int> l;
+
+	Lista<char> lC;
+
+	for (int i = 0; i < rand() % 30 + 10; ++i) {
+		char n = 'a' + rand() % 20;
+		lC.insertarFinal(n);
+	}
+
+	cout << "----------------------------------" << endl;
+	cout << endl;
+	cout << "Lista Char" << endl;
+	cout << endl;
+	cout << lC << endl;
+	cout << endl;
+	cout << "Cantidad de Elementos: " << lC.getCantidad() << endl;
+	cout << endl;
+
+
+	Lista<double> lD;
+
+	for (int i = 0; i < rand() % 30 + 10; ++i) {
+		double n = (rand() % 1000) / 0.578971371391;
+		lD.insertarFinal(n);
+	}
+
+	cout << "----------------------------------" << endl;
+	cout << endl;
+	cout << "Lista Double" << endl;
+	cout << endl;
+	cout << lD << endl;
+	cout << endl;
+	cout << "Cantidad de Elementos: " << lD.getCantidad() << endl;
+	cout << endl;
+
+	Lista<int> lI;
 
 	for (int i = 0; i < rand() % 30 + 10; ++i) {
 		int n = rand() % 1000;
-		l.insertarFinal(n);
+		lI.insertarFinal(n);
 	}
 
+	cout << "----------------------------------" << endl;
+	cout << endl;
 	cout << "Lista Enteros" << endl;
 	cout << endl;
-	cout << l << endl;
+	cout << lI << endl;
 	cout << endl;
-	cout << "Cantidad de Elementos: " << l.getCantidad() << endl;
+	cout << "Cantidad de Elementos: " << lI.getCantidad() << endl;
 	cout << endl;
 
-	Lista<Persona> l2;
+	Lista<Persona> lP;
 
 	for (int w = 0; w < rand() % 30 + 10; ++w) {
 
 		Persona p(rand() % 1000, s[rand() % 30], rand() % 100);
-		l2.insertarFinal(p);
+		lP.insertarFinal(p);
 
 	}
 
@@ -45,9 +81,9 @@ int main(int argc, char **argv) {
 	cout << endl;
 	cout << "Lista Personas" << endl;
 	cout << endl;
-	cout << l2 << endl;
+	cout << lP << endl;
 	cout << endl;
-	cout << "Cantidad de Elementos: " << l2.getCantidad() << endl;
+	cout << "Cantidad de Elementos: " << lP.getCantidad() << endl;
 	cout << endl;
 	
 	
@@ -57,8 +93,8 @@ int main(int argc, char **argv) {
 	cout << "Iterador Preincremento" << endl;
 	cout << endl;
 
-	Iterador<Persona> it = l2.begin();
-	while (it != l2.end()) {
+	Iterador<Persona> it = lP.begin();
+	while (it != lP.end()) {
 		cout << *it << endl;
 		++it;
 	}
@@ -69,8 +105,8 @@ int main(int argc, char **argv) {
 	cout << "Iterador Posincremento" << endl;
 	cout << endl;
 
-	Iterador<Persona> it2 = l2.begin();
-	while (it2 != l2.end()) {
+	Iterador<Persona> it2 = lP.begin();
+	while (it2 != lP.end()) {
 		cout << *it2 << endl;
 		it2++;
 	}
@@ -82,8 +118,8 @@ int main(int argc, char **argv) {
 	cout << "Iterador Inverso Predecremento" << endl;
 	cout << endl;
 
-	IteradorInverso<Persona> it3 = l2.rBegin();
-	while (it3 != l2.rEnd()) {
+	IteradorInverso<Persona> it3 = lP.rBegin();
+	while (it3 != lP.rEnd()) {
 		cout << *it3 << endl;
 		--it3;
 	}
@@ -94,8 +130,8 @@ int main(int argc, char **argv) {
 	cout << "Iterador Inverso Posdecremento" << endl;
 	cout << endl;
 
-	IteradorInverso<Persona> it4 = l2.rBegin();
-	while (it4 != l2.rEnd()) {
+	IteradorInverso<Persona> it4 = lP.rBegin();
+	while (it4 != lP.rEnd()) {
 		cout << *it4 << endl;
 		it4--;
 	}
